@@ -1,0 +1,13 @@
+[Unit]
+Description=Exports CPU temps to port 9080 which is then scrapable by prometheus
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash /opt/prometheus-cpu-temperature-exporter/prometheus-cpu-temperature-exporter.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
