@@ -2,7 +2,7 @@
 
 You can utilize this on any machine that is able to execute the `sensors` command with the help of the `lm-sensors` apt package
 
-- `apt install lm-sensors`
+- `apt update && apt install bc netcat -y`
 
 ## Installation
 
@@ -17,7 +17,7 @@ After=network.target
 [Service]
 Type=simple
 User=root
-ExecStart=/bin/bash /path/to/prometheus-cpu-temperature-exporter/prometheus-cpu-temperature-exporter.sh
+ExecStart=/bin/bash /opt/prometheus-cpu-temperature-exporter/prometheus-cpu-temperature-exporter.sh
 Restart=on-failure
 
 [Install]
